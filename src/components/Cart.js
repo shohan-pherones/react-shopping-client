@@ -1,15 +1,44 @@
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { BsArrowLeft } from "react-icons/bs";
+import {
+  addToCart,
+  clearCart,
+  decreaseCart,
+  getTotals,
+  removeFromCart,
+} from "../features/products/cartSlice";
+import { useEffect } from "react";
 
 const Cart = () => {
   const cart = useSelector((state) => state.cart);
+  const dispatch = useDispatch();
 
   const currencyFormatter = (price) =>
     price.toLocaleString("en-US", {
       style: "currency",
       currency: "USD",
     });
+
+  const handleRemoveFromCart = (cartItem) => {
+    dispatch(removeFromCart(cartItem));
+  };
+
+  const handleDecreaseQuantity = (cartItem) => {
+    dispatch(decreaseCart(cartItem));
+  };
+
+  const handleIncreaseQunatity = (cartItem) => {
+    dispatch(addToCart(cartItem));
+  };
+
+  const handleClearCart = () => {
+    dispatch(clearCart());
+  };
+
+  useEffect(() => {
+    dispatch(getTotals());
+  }, [cart, dispatch]);
 
   return (
     <section className="cart-container">
@@ -44,16 +73,22 @@ const Cart = () => {
                   </div>
                   <div className="cart-product-texts">
                     <p>{cartItem.name}</p>
-                    <button>Remove</button>
+                    <button onClick={() => handleRemoveFromCart(cartItem)}>
+                      Remove
+                    </button>
                   </div>
                 </div>
                 <div className="cart-product-price">
                   <p>{currencyFormatter(cartItem.price)}</p>
                 </div>
                 <div className="cart-product-quantity">
-                  <button>-</button>
+                  <button onClick={() => handleDecreaseQuantity(cartItem)}>
+                    -
+                  </button>
                   <span className="count">{cartItem.cartQuantity}</span>
-                  <button>+</button>
+                  <button onClick={() => handleIncreaseQunatity(cartItem)}>
+                    +
+                  </button>
                 </div>
                 <div className="cart-product-total-price">
                   <p>
@@ -65,7 +100,9 @@ const Cart = () => {
           </div>
 
           <div className="cart-summary">
-            <button className="clear-cart">Clear cart</button>
+            <button className="clear-cart" onClick={handleClearCart}>
+              Clear cart
+            </button>
             <div className="cart-checkout">
               <div className="subtotal">
                 <span>Subtotal</span>

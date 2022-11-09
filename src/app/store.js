@@ -3,7 +3,7 @@ import productsReducer, {
   productsFetch,
 } from "../features/products/productsSlice";
 import { productsApi } from "../features/products/productsApi";
-import cartReducer from "../features/products/cartSlice";
+import cartReducer, { getTotals } from "../features/products/cartSlice";
 
 export const store = configureStore({
   reducer: {
@@ -16,3 +16,4 @@ export const store = configureStore({
 });
 
 store.dispatch(productsFetch());
+store.dispatch(getTotals());
