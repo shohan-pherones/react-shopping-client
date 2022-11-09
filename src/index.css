@@ -125,7 +125,7 @@ body {
 }
 
 .product-img {
-  height: 18rem;
+  height: 26rem;
   overflow: hidden;
   display: flex;
   justify-content: center;
@@ -137,6 +137,7 @@ body {
 .product-img img {
   width: 100%;
   display: block;
+  border-radius: 7.5px;
 }
 
 .product-texts {
@@ -234,7 +235,7 @@ body {
 }
 
 .cart-product-img {
-  width: 15rem;
+  width: 10rem;
   height: 10rem;
   overflow: hidden;
   display: flex;
