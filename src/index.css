@@ -1,0 +1,97 @@
+@import url("https://fonts.googleapis.com/css2?family=Urbanist:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+:root {
+  --color-primary: #61dafb;
+  --color-light: #fff;
+  --color-dark: #282c34;
+  --color-darker: #20232a;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+  list-style: none;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  overflow-x: hidden;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-dark);
+  color: var(--color-light);
+  font-family: "Urbanist", sans-serif;
+  font-size: 2rem;
+  font-weight: 400;
+  letter-spacing: 1px;
+  line-height: 1.2;
+}
+
+.wrapper {
+  max-width: 80vw;
+  margin: 0 auto;
+}
+
+/* Navbar */
+.navbar {
+  background-color: var(--color-darker);
+  height: 8rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10vw;
+}
+
+.logo {
+  color: var(--color-primary);
+}
+
+.cart-icon {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.cart-icon svg {
+  height: 2.75rem;
+  color: var(--color-primary);
+}
+
+.cart-quantity {
+  color: var(--color-darker);
+  background-color: var(--color-primary);
+  height: 2.5rem;
+  width: 2.5rem;
+  display: grid;
+  place-items: center;
+  font-size: 1.7rem;
+  font-weight: 600;
+  border-radius: 50%;
+}
+
+/* Not found */
+.not-found {
+  padding: 10rem 0;
+  text-align: center;
+}
+
+.not-found h2 {
+  font-size: 10rem;
+  color: var(--color-primary);
+}
+
+.not-found p {
+  font-size: 4rem;
+}
