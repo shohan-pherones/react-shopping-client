@@ -10,15 +10,9 @@ import {
 } from "../features/products/cartSlice";
 import { useEffect } from "react";
 
-const Cart = () => {
+const Cart = ({ currencyFormatter }) => {
   const cart = useSelector((state) => state.cart);
   const dispatch = useDispatch();
-
-  const currencyFormatter = (price) =>
-    price.toLocaleString("en-US", {
-      style: "currency",
-      currency: "USD",
-    });
 
   const handleRemoveFromCart = (cartItem) => {
     dispatch(removeFromCart(cartItem));

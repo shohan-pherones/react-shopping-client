@@ -1,22 +1,12 @@
-import { useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
-import { addToCart } from "../features/products/cartSlice";
-import { useGetAllProductsQuery } from "../features/products/productsApi";
 import Products from "./Products";
 
-const Home = () => {
-  const { data, error, isLoading } = useGetAllProductsQuery();
-  const dispatch = useDispatch();
-  const navigate = useNavigate();
-
-  const currencyFormatter = (price) =>
-    price.toLocaleString("en-US", { style: "currency", currency: "USD" });
-
-  const handleAddToCart = (product) => {
-    dispatch(addToCart(product));
-    navigate("cart");
-  };
-
+const Home = ({
+  isLoading,
+  error,
+  data,
+  currencyFormatter,
+  handleAddToCart,
+}) => {
   return (
     <section className="home">
       <Products
