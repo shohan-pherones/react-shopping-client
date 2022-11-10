@@ -5,6 +5,7 @@ import Cart from "./components/Cart";
 import NotFound from "./components/NotFound";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Footer from "./components/Footer";
 
 const App = () => {
   return (
@@ -18,7 +19,9 @@ const App = () => {
           <Route path="*" element={<NotFound />} />
         </Routes>
       </div>
+      <Footer />
     </>
   );
 };
+
 export default App;
