@@ -35,10 +35,10 @@ const Cart = ({ currencyFormatter }) => {
   }, [cart, dispatch]);
 
   return (
-    <section className="cart-container">
+    <div className="cart-wrapper">
       <h2 className="section-title">Shopping Cart</h2>
       {cart.cartItems.length === 0 ? (
-        <div className="cart-empty">
+        <div className="if-cart-is-empty">
           <p>Your cart is currently empty</p>
           <div className="start-shopping">
             <Link to="/">
@@ -50,41 +50,44 @@ const Cart = ({ currencyFormatter }) => {
           </div>
         </div>
       ) : (
-        <div className="cart-display">
-          <div className="titles">
-            <p className="product-title">Product</p>
-            <p className="price">Price</p>
-            <p className="quantity">Quantity</p>
-            <p className="total">Total</p>
+        <div className="if-cart-is-not-empty">
+          <div className="headlines">
+            <p>Product</p>
+            <p>Price</p>
+            <p>Quantity</p>
+            <p>Total</p>
           </div>
 
-          <div className="cart-items">
+          <div className="cart-items-wrapper">
             {cart.cartItems?.map((cartItem) => (
               <div className="cart-item" key={cartItem.id}>
-                <div className="cart-product">
-                  <div className="cart-product-img">
+                <div className="cart-item-left">
+                  <div className="cart-item-img">
                     <img src={cartItem.image} alt={cartItem.name} />
                   </div>
-                  <div className="cart-product-texts">
+                  <div className="cart-item-texts">
                     <p>{cartItem.name}</p>
                     <button onClick={() => handleRemoveFromCart(cartItem)}>
                       Remove
                     </button>
                   </div>
                 </div>
-                <div className="cart-product-price">
+
+                <div className="cart-item-price">
                   <p>{currencyFormatter(cartItem.price)}</p>
                 </div>
-                <div className="cart-product-quantity">
+
+                <div className="cart-item-quantity">
                   <button onClick={() => handleDecreaseQuantity(cartItem)}>
                     -
                   </button>
-                  <span className="count">{cartItem.cartQuantity}</span>
+                  <span>{cartItem.cartQuantity}</span>
                   <button onClick={() => handleIncreaseQunatity(cartItem)}>
                     +
                   </button>
                 </div>
-                <div className="cart-product-total-price">
+
+                <div className="cart-item-total-price">
                   <p>
                     {currencyFormatter(cartItem.price * cartItem.cartQuantity)}
                   </p>
@@ -94,7 +97,7 @@ const Cart = ({ currencyFormatter }) => {
           </div>
 
           <div className="cart-summary">
-            <button className="clear-cart" onClick={handleClearCart}>
+            <button className="clear-cart-btn" onClick={handleClearCart}>
               Clear cart
             </button>
             <div className="cart-checkout">
@@ -104,7 +107,7 @@ const Cart = ({ currencyFormatter }) => {
                   {currencyFormatter(cart.cartTotalAmount)}
                 </span>
               </div>
-              <p className="optional-text">
+              <p className="taxes-shipping">
                 Taxes and shipping costs are calculated at the checkout
               </p>
               <button className="checkout-btn">Checkout</button>
@@ -120,7 +123,7 @@ const Cart = ({ currencyFormatter }) => {
           </div>
         </div>
       )}
-    </section>
+    </div>
   );
 };
 

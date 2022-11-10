@@ -8,7 +8,7 @@ const Home = ({
   handleAddToCart,
 }) => {
   return (
-    <section className="home">
+    <div>
       <Products
         isLoading={isLoading}
         error={error}
@@ -16,7 +16,7 @@ const Home = ({
         currencyFormatter={currencyFormatter}
         handleAddToCart={handleAddToCart}
       />
-    </section>
+    </div>
   );
 };
 
