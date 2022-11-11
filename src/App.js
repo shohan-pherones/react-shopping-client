@@ -26,7 +26,7 @@ const App = () => {
   };
 
   return (
-    <>
+    <div>
       <Navbar />
       <ToastContainer />
       <Routes>
@@ -61,7 +61,7 @@ const App = () => {
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
-    </>
+    </div>
   );
 };
 

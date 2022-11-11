@@ -9,7 +9,7 @@ const Products = ({
   handleAddToCart,
 }) => {
   return (
-    <>
+    <div>
       {isLoading ? (
         <span className="loader">
           <FiLoader />
@@ -31,7 +31,7 @@ const Products = ({
           </div>
         </>
       )}
-    </>
+    </div>
   );
 };
 
