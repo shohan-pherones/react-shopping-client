@@ -10,6 +10,7 @@ import Products from "./components/Products";
 import Cart from "./components/Cart";
 import NotFound from "./components/NotFound";
 import Footer from "./components/Footer";
+import Categories from "./components/Categories";
 
 const App = () => {
   const { data, error, isLoading } = useGetAllProductsQuery();
@@ -25,9 +26,15 @@ const App = () => {
     navigate("cart");
   };
 
+  const isNavActiveStyles = ({ isActive }) => {
+    return {
+      color: isActive ? "#f9fafb" : null,
+    };
+  };
+
   return (
-    <div>
-      <Navbar />
+    <div className="bg-gray-50 text-gray-700">
+      <Navbar isNavActiveStyles={isNavActiveStyles} />
       <ToastContainer />
       <Routes>
         <Route
@@ -42,6 +49,7 @@ const App = () => {
             />
           }
         />
+        <Route path="categories" element={<Categories />} />
         <Route
           path="shop"
           element={
@@ -60,7 +68,7 @@ const App = () => {
         />
         <Route path="*" element={<NotFound />} />
       </Routes>
-      <Footer />
+      <Footer isNavActiveStyles={isNavActiveStyles} />
     </div>
   );
 };

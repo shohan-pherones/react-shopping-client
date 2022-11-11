@@ -7,3 +7,63 @@
 body {
   font-family: "Poppins", sans-serif;
 }
+
+.camera {
+  background-image: linear-gradient(
+      to right,
+      rgba(107, 114, 128, 0.75),
+      rgba(17, 24, 39, 0.75)
+    ),
+    url("https://res.cloudinary.com/dy28teazb/image/upload/v1668165872/React%20Shopping/Categories/camera_choprq.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.tv {
+  background-image: linear-gradient(
+      to right,
+      rgba(107, 114, 128, 0.75),
+      rgba(17, 24, 39, 0.75)
+    ),
+    url("https://res.cloudinary.com/dy28teazb/image/upload/v1668165872/React%20Shopping/Categories/tv_xdvusm.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.console {
+  background-image: linear-gradient(
+      to right,
+      rgba(107, 114, 128, 0.75),
+      rgba(17, 24, 39, 0.75)
+    ),
+    url("https://res.cloudinary.com/dy28teazb/image/upload/v1668165872/React%20Shopping/Categories/console_wn0qr4.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.headphones {
+  background-image: linear-gradient(
+      to right,
+      rgba(107, 114, 128, 0.75),
+      rgba(17, 24, 39, 0.75)
+    ),
+    url("https://res.cloudinary.com/dy28teazb/image/upload/v1668165872/React%20Shopping/Categories/headphones_rtc8rw.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.smart-watches {
+  background-image: linear-gradient(
+      to right,
+      rgba(107, 114, 128, 0.75),
+      rgba(17, 24, 39, 0.75)
+    ),
+    url("https://res.cloudinary.com/dy28teazb/image/upload/v1668165872/React%20Shopping/Categories/smart-watches_rvhpfa.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
