@@ -35,15 +35,20 @@ const Cart = ({ currencyFormatter }) => {
   }, [cart, dispatch]);
 
   return (
-    <div className="cart-wrapper">
-      <h2 className="section-title">Shopping Cart</h2>
+    <div className="cart-wrapper mt-20 container mx-auto">
+      <h2 className="section-title uppercase text-center mb-10 text-3xl font-semibold tracking-widest">
+        Shopping Cart
+      </h2>
       {cart.cartItems.length === 0 ? (
-        <div className="if-cart-is-empty">
-          <p>Your cart is currently empty</p>
+        <div className="if-cart-is-empty flex flex-col justify-center items-center gap-3">
+          <p className="text-2xl">Your cart is currently empty</p>
           <div className="start-shopping">
-            <Link to="/">
+            <Link
+              to="/"
+              className="flex items-center text-lg gap-2 text-cyan-500 group"
+            >
               <span>
-                <BsArrowLeft />
+                <BsArrowLeft className="group-hover:-translate-x-2 duration-300" />
               </span>
               <span>Start shopping</span>
             </Link>
@@ -51,23 +56,29 @@ const Cart = ({ currencyFormatter }) => {
         </div>
       ) : (
         <div className="if-cart-is-not-empty">
-          <div className="headlines">
-            <p>Product</p>
+          <div className="headlines grid grid-cols-6 border-b uppercase tracking-widest text-sm font-medium pb-3">
+            <p className="col-span-3">Product</p>
             <p>Price</p>
             <p>Quantity</p>
-            <p>Total</p>
+            <p className="justify-self-end">Total</p>
           </div>
 
-          <div className="cart-items-wrapper">
+          <div className="cart-items-wrapper flex flex-col gap-5 mt-5">
             {cart.cartItems?.map((cartItem) => (
-              <div className="cart-item" key={cartItem.id}>
-                <div className="cart-item-left">
-                  <div className="cart-item-img">
+              <div
+                className="cart-item grid grid-cols-6 items-center border-b pb-3"
+                key={cartItem.id}
+              >
+                <div className="cart-item-left col-span-3 flex gap-5">
+                  <div className="cart-item-img w-24 h-24 overflow-hidden">
                     <img src={cartItem.image} alt={cartItem.name} />
                   </div>
                   <div className="cart-item-texts">
                     <p>{cartItem.name}</p>
-                    <button onClick={() => handleRemoveFromCart(cartItem)}>
+                    <button
+                      onClick={() => handleRemoveFromCart(cartItem)}
+                      className="text-gray-400 hover:text-rose-500 duration-300"
+                    >
                       Remove
                     </button>
                   </div>
@@ -77,7 +88,7 @@ const Cart = ({ currencyFormatter }) => {
                   <p>{currencyFormatter(cartItem.price)}</p>
                 </div>
 
-                <div className="cart-item-quantity">
+                <div className="cart-item-quantity bg-gray-100 justify-self-start flex gap-5 px-3 py-2 text-lg border border-gray-300 hover:bg-gray-200 hover:border-gray-400 duration-300">
                   <button onClick={() => handleDecreaseQuantity(cartItem)}>
                     -
                   </button>
@@ -87,7 +98,7 @@ const Cart = ({ currencyFormatter }) => {
                   </button>
                 </div>
 
-                <div className="cart-item-total-price">
+                <div className="cart-item-total-price justify-self-end font-medium">
                   <p>
                     {currencyFormatter(cartItem.price * cartItem.cartQuantity)}
                   </p>
@@ -96,25 +107,33 @@ const Cart = ({ currencyFormatter }) => {
             ))}
           </div>
 
-          <div className="cart-summary">
-            <button className="clear-cart-btn" onClick={handleClearCart}>
+          <div className="cart-summary mt-10 flex justify-between items-start">
+            <button
+              className="clear-cart-btn uppercase tracking-widest font-medium text-rose-500 bg-rose-50 px-5 py-3 border border-rose-500 duration-300 hover:bg-rose-500 hover:text-rose-50"
+              onClick={handleClearCart}
+            >
               Clear cart
             </button>
-            <div className="cart-checkout">
-              <div className="subtotal">
+            <div className="cart-checkout flex flex-col gap-3">
+              <div className="subtotal flex justify-between text-2xl font-medium text-cyan-500">
                 <span>Subtotal</span>
                 <span className="amount">
                   {currencyFormatter(cart.cartTotalAmount)}
                 </span>
               </div>
-              <p className="taxes-shipping">
+              <p className="taxes-shipping text-gray-400">
                 Taxes and shipping costs are calculated at the checkout
               </p>
-              <button className="checkout-btn">Checkout</button>
+              <button className="checkout-btn bg-cyan-500 py-3 px-5 text-lg uppercase tracking-widest font-medium text-cyan-50 duration-300 hover:bg-gray-700 hover:text-gray-50">
+                Checkout
+              </button>
               <div className="continue-shopping">
-                <Link to="/">
+                <Link
+                  to="/"
+                  className="flex items-center text-lg gap-2 text-cyan-500 group"
+                >
                   <span>
-                    <BsArrowLeft />
+                    <BsArrowLeft className="group-hover:-translate-x-2 duration-300" />
                   </span>
                   <span>Continue shopping</span>
                 </Link>
