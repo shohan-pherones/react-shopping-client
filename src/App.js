@@ -33,43 +33,45 @@ const App = () => {
   };
 
   return (
-    <div className="bg-gray-50 text-gray-700">
-      <Navbar isNavActiveStyles={isNavActiveStyles} />
-      <ToastContainer />
-      <Routes>
-        <Route
-          path="/"
-          element={
-            <Home
-              isLoading={isLoading}
-              error={error}
-              data={data}
-              currencyFormatter={currencyFormatter}
-              handleAddToCart={handleAddToCart}
-            />
-          }
-        />
-        <Route path="categories" element={<Categories />} />
-        <Route
-          path="shop"
-          element={
-            <Products
-              isLoading={isLoading}
-              error={error}
-              data={data}
-              currencyFormatter={currencyFormatter}
-              handleAddToCart={handleAddToCart}
-            />
-          }
-        />
-        <Route
-          path="cart"
-          element={<Cart currencyFormatter={currencyFormatter} />}
-        />
-        <Route path="*" element={<NotFound />} />
-      </Routes>
+    <>
+      <div className="bg-gray-50 text-gray-700 min-h-screen pb-20">
+        <Navbar isNavActiveStyles={isNavActiveStyles} />
+        <ToastContainer />
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <Home
+                isLoading={isLoading}
+                error={error}
+                data={data}
+                currencyFormatter={currencyFormatter}
+                handleAddToCart={handleAddToCart}
+              />
+            }
+          />
+          <Route path="categories" element={<Categories />} />
+          <Route
+            path="shop"
+            element={
+              <Products
+                isLoading={isLoading}
+                error={error}
+                data={data}
+                currencyFormatter={currencyFormatter}
+                handleAddToCart={handleAddToCart}
+              />
+            }
+          />
+          <Route
+            path="cart"
+            element={<Cart currencyFormatter={currencyFormatter} />}
+          />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </div>
       <Footer isNavActiveStyles={isNavActiveStyles} />
-    </div>
+    </>
   );
 };
 

@@ -11,11 +11,13 @@ const Products = ({
   return (
     <div className="mt-20 container mx-auto">
       {isLoading ? (
-        <span className="loader">
-          <FiLoader />
+        <span className="loader text-center block text-xl">
+          <FiLoader className="inline-block animate-spin" />
         </span>
       ) : error ? (
-        <p className="error-message">Something went wrong</p>
+        <p className="error-message text-center text-rose-500">
+          Something went wrong
+        </p>
       ) : (
         <>
           <h2 className="section-title uppercase text-center mb-10 text-3xl font-semibold tracking-widest">

@@ -2,7 +2,7 @@ import { Link, NavLink } from "react-router-dom";
 
 const Footer = ({ isNavActiveStyles }) => {
   return (
-    <footer className="mt-20 bg-gray-700 text-gray-500 py-10 flex flex-col justify-center items-center gap-5">
+    <footer className="bg-gray-700 text-gray-500 py-10 flex flex-col justify-center items-center gap-5">
       <div className="flex gap-5">
         <NavLink
           end
