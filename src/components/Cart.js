@@ -41,7 +41,7 @@ const Cart = ({ currencyFormatter }) => {
       </h2>
       {cart.cartItems.length === 0 ? (
         <div className="if-cart-is-empty flex flex-col justify-center items-center gap-3">
-          <p className="text-2xl">Your cart is currently empty</p>
+          <p className="text-2xl text-center">Your cart is currently empty</p>
           <div className="start-shopping">
             <Link
               to="/"
@@ -56,20 +56,20 @@ const Cart = ({ currencyFormatter }) => {
         </div>
       ) : (
         <div className="if-cart-is-not-empty">
-          <div className="headlines grid grid-cols-6 border-b uppercase tracking-widest text-sm font-medium pb-3">
+          <div className="headlines md:grid grid-cols-6 border-b uppercase tracking-widest text-sm font-medium pb-3 hidden">
             <p className="col-span-3">Product</p>
             <p>Price</p>
             <p>Quantity</p>
             <p className="justify-self-end">Total</p>
           </div>
 
-          <div className="cart-items-wrapper flex flex-col gap-5 mt-5">
+          <div className="cart-items-wrapper flex flex-col gap-5 mt-5 px-5 md:px-0">
             {cart.cartItems?.map((cartItem) => (
               <div
-                className="cart-item grid grid-cols-6 items-center border-b pb-3"
+                className="cart-item grid grid-cols-6 md:items-center border-b pb-3 grid-rows-2 md:grid-rows-none"
                 key={cartItem.id}
               >
-                <div className="cart-item-left col-span-3 flex gap-5">
+                <div className="cart-item-left col-span-4 md:col-span-3 flex gap-5 row-span-2 md:row-auto">
                   <div className="cart-item-img w-24 h-24 overflow-hidden">
                     <img src={cartItem.image} alt={cartItem.name} />
                   </div>
@@ -84,11 +84,11 @@ const Cart = ({ currencyFormatter }) => {
                   </div>
                 </div>
 
-                <div className="cart-item-price">
+                <div className="cart-item-price hidden md:block">
                   <p>{currencyFormatter(cartItem.price)}</p>
                 </div>
 
-                <div className="cart-item-quantity bg-gray-100 justify-self-start flex gap-5 px-3 py-2 text-lg border border-gray-300 hover:bg-gray-200 hover:border-gray-400 duration-300">
+                <div className="cart-item-quantity bg-gray-100 justify-self-start flex gap-5 px-3 py-2 text-lg border border-gray-300 hover:bg-gray-200 hover:border-gray-400 duration-300 self-start md:self-auto col-start-5 md:col-start-auto col-span-2 w-full md:col-span-1 md:w-auto justify-center md:justify-start">
                   <button onClick={() => handleDecreaseQuantity(cartItem)}>
                     -
                   </button>
@@ -98,7 +98,7 @@ const Cart = ({ currencyFormatter }) => {
                   </button>
                 </div>
 
-                <div className="cart-item-total-price justify-self-end font-medium">
+                <div className="cart-item-total-price md:justify-self-end font-medium row-start-2 col-start-5 md:row-start-auto md:col-start-auto col-span-2 md:col-span-1 text-center md:text-left">
                   <p>
                     {currencyFormatter(cartItem.price * cartItem.cartQuantity)}
                   </p>
@@ -107,7 +107,7 @@ const Cart = ({ currencyFormatter }) => {
             ))}
           </div>
 
-          <div className="cart-summary mt-10 flex justify-between items-start">
+          <div className="cart-summary mt-10 flex md:justify-between md:items-start flex-col-reverse md:flex-row items-center gap-10 md:gap-0 px-5 md:px-0">
             <button
               className="clear-cart-btn uppercase tracking-widest font-medium text-rose-500 bg-rose-50 px-5 py-3 border border-rose-500 duration-300 hover:bg-rose-500 hover:text-rose-50"
               onClick={handleClearCart}

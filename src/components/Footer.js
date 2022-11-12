@@ -19,15 +19,8 @@ const Footer = ({ isNavActiveStyles }) => {
         >
           Shop
         </NavLink>
-        <NavLink
-          to="categories"
-          className="hover:text-gray-50 duration-300"
-          style={isNavActiveStyles}
-        >
-          Categories
-        </NavLink>
       </div>
-      <p>
+      <p className="text-center">
         Copyright &copy; {new Date().getFullYear()}{" "}
         <Link to="/" className="hover:text-cyan-400 duration-300">
           React Shopping.

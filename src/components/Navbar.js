@@ -7,7 +7,7 @@ const Navbar = ({ isNavActiveStyles }) => {
 
   return (
     <div className="bg-gray-700 text-gray-50">
-      <nav className="container mx-auto h-20 flex justify-between items-center">
+      <nav className="mx-auto sm:h-20 flex sm:justify-between items-center px-10 flex-col sm:flex-row justify-center gap-5 sm:gap-0 h-auto py-5 sm:py-0">
         <Link to="/">
           <h2 className="font-semibold uppercase tracking-widest text-lg hover:text-cyan-400 duration-300">
             React Shopping
@@ -28,13 +28,6 @@ const Navbar = ({ isNavActiveStyles }) => {
             style={isNavActiveStyles}
           >
             Shop
-          </NavLink>
-          <NavLink
-            to="categories"
-            className="text-gray-400 hover:text-gray-50 duration-300"
-            style={isNavActiveStyles}
-          >
-            Categories
           </NavLink>
           <Link to="cart" className="relative group">
             <span>

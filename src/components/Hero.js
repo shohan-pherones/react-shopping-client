@@ -2,16 +2,16 @@ import { Link } from "react-router-dom";
 
 const Hero = () => {
   return (
-    <div className="hero grid grid-cols-4 bg-gray-200">
-      <div className="hero-l h-96 overflow-hidden flex items-center justify-center">
+    <div className="hero grid grid-cols-1 lg:grid-cols-4 bg-gray-200 py-5 sm:py-0">
+      <div className="hero-l h-96 overflow-hidden lg:flex items-center justify-center hidden">
         <img
           src="https://res.cloudinary.com/dy28teazb/image/upload/v1668160692/React%20Shopping/Hero/ps4_oagfhk.png"
           alt="PS4"
           className="w-full block"
         />
       </div>
-      <div className="hero-md col-span-2 h-96 overflow-hidden text-center flex flex-col gap-5 justify-center items-center">
-        <h1 className="text-7xl font-black">
+      <div className="hero-md col-span-2 h-96 overflow-hidden text-center flex flex-col gap-5 justify-center items-center px-5 lg:px-0">
+        <h1 className="text-5xl lg:text-7xl font-black">
           Dive into the{" "}
           <span className="text-cyan-500 hover:text-rose-500 duration-300">
             tech
@@ -29,7 +29,7 @@ const Hero = () => {
           </button>
         </Link>
       </div>
-      <div className="hero-r h-96 overflow-hidden flex items-center justify-center">
+      <div className="hero-r h-96 overflow-hidden lg:flex items-center justify-center hidden">
         <img
           src="https://res.cloudinary.com/dy28teazb/image/upload/v1668160693/React%20Shopping/Hero/tv_xzaxqw.png"
           alt="TV"

@@ -12,7 +12,13 @@ const Home = ({
   return (
     <div>
       <Hero />
-      <Categories />
+      <Categories
+        isLoading={isLoading}
+        error={error}
+        data={data}
+        currencyFormatter={currencyFormatter}
+        handleAddToCart={handleAddToCart}
+      />
       <Products
         isLoading={isLoading}
         error={error}

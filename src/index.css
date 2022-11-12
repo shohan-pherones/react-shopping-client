@@ -8,24 +8,6 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
-::selection {
-  background-color: #06b6d4;
-  color: #ecfeff;
-}
-
-::-webkit-scrollbar {
-  width: 10px;
-}
-
-::-webkit-scrollbar-thumb {
-  height: 10%;
-  background-color: #06b6d4;
-}
-
-::-webkit-scrollbar-track {
-  background-color: #374151;
-}
-
 .camera {
   background-image: linear-gradient(
       to right,

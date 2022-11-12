@@ -7,6 +7,7 @@ const Products = ({
   data,
   currencyFormatter,
   handleAddToCart,
+  categoryName,
 }) => {
   return (
     <div className="mt-20 container mx-auto">
@@ -21,7 +22,7 @@ const Products = ({
       ) : (
         <>
           <h2 className="section-title uppercase text-center mb-10 text-3xl font-semibold tracking-widest">
-            New Arrivals
+            {categoryName ? `Browse ${categoryName}` : "New Arrivals"}
           </h2>
           <div className="products-wrapper flex flex-wrap gap-10 justify-center">
             {data?.map((product) => (

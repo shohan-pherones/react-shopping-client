@@ -50,7 +50,6 @@ const App = () => {
               />
             }
           />
-          <Route path="categories" element={<Categories />} />
           <Route
             path="shop"
             element={
