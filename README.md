@@ -1,4 +1,4 @@
-## React Shopping: An online electronics accessories store
+## React Shopping: An Online Electronics Accessories Store
 
 ### What is React Shopping?
 
@@ -9,9 +9,9 @@ React shopping is a top retailer of electronics accessories. The most popular ca
 
 ### Features:
 
-1.  User can add an item into the cart
-2.  User can update quantity for an specific item
-3.  Also the products can be filtered through categories
+1.  Shopping cart functionality has been implemented using Redux.js
+2.  All the product data has been served via JSON server and fetched using RTK Query
+3.  Cart items also saved into the local storage of the client’s browser
 
 ### How to use this repo?
 
@@ -34,6 +34,6 @@ https://react-shopping-shohan.netlify.app
 
 ### Tools:
 
-React.js, Redux.js, Redux Toolkit, RTK Query
+React.js, Redux.js, Redux Toolkit, RTK Query, Tailwind CSS
 
 ### Thanks for visiting this repo, take care!
